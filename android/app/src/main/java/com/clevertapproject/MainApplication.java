@@ -13,6 +13,10 @@ import com.clevertapproject.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
+// Clevertap
+import com.clevertap.android.sdk.ActivityLifecycleCallback;
+import com.clevertap.android.sdk.CleverTapAPI;
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -51,6 +55,9 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public void onCreate() {
+    // Clevertap
+    ActivityLifecycleCallback.register(this);   
+
     super.onCreate();
     // If you opted-in for the New Architecture, we enable the TurboModule system
     ReactFeatureFlags.useTurboModules = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;

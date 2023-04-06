@@ -1,5 +1,10 @@
 PODS:
   - boost (1.76.0)
+  - CleverTap-iOS-SDK (4.2.2):
+    - SDWebImage (~> 5.11)
+  - clevertap-react-native (1.0.2):
+    - CleverTap-iOS-SDK (= 4.2.2)
+    - React-Core
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.70.7)
@@ -368,6 +373,9 @@ PODS:
     - React-jsi (= 0.70.7)
     - React-logger (= 0.70.7)
     - React-perflogger (= 0.70.7)
+  - SDWebImage (5.15.5):
+    - SDWebImage/Core (= 5.15.5)
+  - SDWebImage/Core (5.15.5)
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -375,6 +383,7 @@ PODS:
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
+  - clevertap-react-native (from `../node_modules/clevertap-react-native`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
@@ -436,6 +445,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CleverTap-iOS-SDK
     - CocoaAsyncSocket
     - Flipper
     - Flipper-Boost-iOSX
@@ -449,12 +459,15 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - SDWebImage
     - SocketRocket
     - YogaKit
 
 EXTERNAL SOURCES:
   boost:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
+  clevertap-react-native:
+    :path: "../node_modules/clevertap-react-native"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -524,6 +537,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   boost: a7c83b31436843459a1961bfd74b96033dc77234
+  CleverTap-iOS-SDK: 36c21b8a671d87a0f9c7b389b339d02528bbe4d7
+  clevertap-react-native: 5b73c22b6d6aa384eb4de7cc23fba5437074a5c8
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: a6454570f573a0f6f1d397e5a95c13e8e45d1700
@@ -569,6 +584,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: eb7837d55b87c7a4ead3ab7632ad70dca87c65dc
   React-runtimeexecutor: 7cec9ed92ebde8309902530bb566819645c84ee5
   ReactCommon: 0253d197eaa7f6689dcd3e7d5360449ab93e10df
+  SDWebImage: fd7e1a22f00303e058058278639bf6196ee431fe
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 92d086bb705a41cc588599b51db726ba7b1d341c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a

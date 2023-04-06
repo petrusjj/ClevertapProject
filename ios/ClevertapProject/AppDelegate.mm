@@ -6,6 +6,11 @@
 
 #import <React/RCTAppSetupUtils.h>
 
+// Clevertap
+#import "CleverTap.h"
+#import "CleverTapReactManager.h"
+#import "CleverTap+InAppNotifications.h"
+
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>
 #import <React/RCTCxxBridgeDelegate.h>
@@ -57,6 +62,17 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+
+
+  // Clevertap
+  #ifdef DEBUG
+    [CleverTap setDebugLevel:CleverTapLogDebug];
+  #endif
+    
+    // initialise
+    [CleverTap autoIntegrate];
+    [[CleverTapReactManager sharedInstance] applicationDidLaunchWithOptions:launchOptions];
+
   return YES;
 }
 
