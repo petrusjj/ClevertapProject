@@ -27,12 +27,12 @@ const App = () => {
         <TouchableOpacity
           style={styles.button}
           onPress={() => loginUser(petrus)}>
-          <Text>Login user Petrus</Text>
+          <Text style={styles.buttonText}>Login user Petrus</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
           onPress={() => loginUser(lucas)}>
-          <Text>Login user Lucas</Text>
+          <Text style={styles.buttonText}>Login user Lucas</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -62,5 +62,8 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
     borderRadius: 4,
     marginHorizontal: 12,
+  },
+  buttonText: {
+    color: 'black',
   },
 });

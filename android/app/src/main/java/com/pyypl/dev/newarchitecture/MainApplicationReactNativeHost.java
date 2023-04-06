@@ -1,4 +1,4 @@
-package com.clevertapproject.newarchitecture;
+package com.pyypl.dev.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.clevertapproject.BuildConfig;
-import com.clevertapproject.newarchitecture.components.MainComponentsRegistry;
-import com.clevertapproject.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.pyypl.dev.BuildConfig;
+import com.pyypl.dev.newarchitecture.components.MainComponentsRegistry;
+import com.pyypl.dev.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -41,9 +41,6 @@ const useClevertap = (): IUseClevertap => {
     CleverTap.addListener(CleverTapProfileDidInitialize, (event: any) => {
       console.log('CleverTapProfileDidInitialize', event);
       setInitializedProfile(event);
-
-      registerForPush();
-      getCleverTapID();
     });
 
     CleverTap.addListener(CleverTapProfileSync, (event: any) => {
@@ -74,8 +71,8 @@ const useClevertap = (): IUseClevertap => {
     }
     setLoggedInUser(user);
     onUserLogin(user);
-    await sleep(2000);
     profileSet({...user, 'MSG-push': true});
+    registerForPush();
   };
 
   return {loginUser, loggedInUser, initializedProfile, notificationPayload};
