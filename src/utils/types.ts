@@ -11,7 +11,16 @@ export type IUser = {
 export type IUseClevertap = {
   fetchClevertapID: () => void;
   loginUser: (user: IUser) => void;
-  loggedInUser: null | IUser;
-  initializedProfile: null | IInitializedProfile;
-  notificationPayload: null | any;
+};
+
+export type IUseClevertapListeners = {};
+
+export type IHome = {
+  navigation: any;
+  route: any;
+};
+
+export type IProfile = {
+  navigation: any;
+  route: any;
 };

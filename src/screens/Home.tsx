@@ -6,36 +6,24 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {lucas, petrus} from '../data';
-import useClevertap from '../useClevertap';
+import {lucas, petrus} from '../utils/data';
+import useClevertap from '../hooks/useClevertap';
+import {IHome} from '../utils/types';
 
-type Props = {};
+const Home = (props: IHome) => {
+  const {route} = props;
+  console.log('render Home.tsx', route);
 
-const Home = (props: Props) => {
-  const {fetchClevertapID, loginUser, loggedInUser, notificationPayload} =
-    useClevertap();
+  const {fetchClevertapID, loginUser} = useClevertap();
 
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" translucent={true} />
 
       <View style={styles.header}>
-        {loggedInUser === null ? null : (
-          <View style={styles.info}>
-            <TouchableOpacity style={styles.button} onPress={fetchClevertapID}>
-              <Text style={styles.buttonText}>Get Clevertap ID</Text>
-            </TouchableOpacity>
-            <Text style={styles.infoText}>{JSON.stringify(loggedInUser)}</Text>
-          </View>
-        )}
-
-        {notificationPayload === null ? null : (
-          <View style={styles.info}>
-            <Text style={styles.infoText}>
-              {JSON.stringify(notificationPayload)}
-            </Text>
-          </View>
-        )}
+        <TouchableOpacity style={styles.button} onPress={fetchClevertapID}>
+          <Text style={styles.buttonText}>Get Clevertap ID</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.buttons}>

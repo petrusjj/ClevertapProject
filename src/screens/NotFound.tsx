@@ -2,18 +2,18 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {IProfile} from '../utils/types';
 
-const Profile = (props: IProfile) => {
+const NotFound = (props: IProfile) => {
   const {route} = props;
-  console.log('render Profile.tsx', route);
+  console.log('render NotFound.tsx', route);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile</Text>
+      <Text style={styles.text}>Not found</Text>
     </View>
   );
 };
 
-export default Profile;
+export default NotFound;
 
 const styles = StyleSheet.create({
   container: {
