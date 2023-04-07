@@ -7,11 +7,13 @@ export const linking = {
         parse: {
           id: (id: string) => {
             console.log('parse home screen id', id);
+            return `id-${id}`;
           },
         },
         stringify: {
           id: (id: string) => {
             console.log('stringify home screen id', id);
+            return id.replace(/^id-/, '');
           },
         },
       },

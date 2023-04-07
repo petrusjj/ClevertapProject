@@ -15,12 +15,19 @@ export type IUseClevertap = {
 
 export type IUseClevertapListeners = {};
 
+export type INavigator = {};
+
 export type IHome = {
   navigation: any;
   route: any;
 };
 
 export type IProfile = {
+  navigation: any;
+  route: any;
+};
+
+export type IRedirect = {
   navigation: any;
   route: any;
 };
