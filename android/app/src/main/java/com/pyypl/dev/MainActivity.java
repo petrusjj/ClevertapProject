@@ -4,7 +4,11 @@ import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
 
+import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.react.CleverTapModule;
+
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
@@ -16,6 +20,22 @@ public class MainActivity extends ReactActivity {
   @Override
   protected String getMainComponentName() {
     return "ClevertapProject";
+  }
+
+  // clevertap
+  @Override
+  public void onNewIntent(final Intent intent) {
+    super.onNewIntent(intent);
+
+    CleverTapAPI cleverTapDefaultInstance = CleverTapAPI.getDefaultInstance(this);
+    if (cleverTapDefaultInstance != null) {
+      /**
+       * On Android 12, Raise notification clicked event when Activity is already running in activity backstack
+       */
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        cleverTapDefaultInstance.pushNotificationClickedEvent(intent.getExtras());
+      }
+    }
   }
 
   // clevertap

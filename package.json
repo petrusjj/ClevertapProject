@@ -5,7 +5,9 @@
   "scripts": {
     "clear-watchman": "watchman watch-del-all",
     "android": "react-native run-android",
+    "android-release": "react-native run-android --variant=release",
     "ios": "react-native run-ios",
+    "ios-release": "react-native run-ios --configuration Release",
     "start": "yarn clear-watchman && react-native start --reset-cache",
     "fresh": "rm -rf yarn.lock && rm -rf node_modules && cd ios && rm -rf Podfile.lock && pod deintegrate && cd .. && yarn && cd ios && pod install && cd .. && cd android && ./gradlew clean && cd ..",
     "test": "jest",

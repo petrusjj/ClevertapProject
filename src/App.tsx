@@ -11,15 +11,29 @@ import {lucas, petrus} from './data';
 import useClevertap from './useClevertap';
 
 const App = () => {
-  const {loginUser, loggedInUser} = useClevertap();
+  const {fetchClevertapID, loginUser, loggedInUser, notificationPayload} =
+    useClevertap();
 
   return (
     <View style={styles.container}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="dark-content" translucent={true} />
 
       <View style={styles.header}>
         {loggedInUser === null ? null : (
-          <Text>{JSON.stringify(loggedInUser)}</Text>
+          <View style={styles.info}>
+            <TouchableOpacity style={styles.button} onPress={fetchClevertapID}>
+              <Text style={styles.buttonText}>Get Clevertap ID</Text>
+            </TouchableOpacity>
+            <Text style={styles.infoText}>{JSON.stringify(loggedInUser)}</Text>
+          </View>
+        )}
+
+        {notificationPayload === null ? null : (
+          <View style={styles.info}>
+            <Text style={styles.infoText}>
+              {JSON.stringify(notificationPayload)}
+            </Text>
+          </View>
         )}
       </View>
 
@@ -64,6 +78,14 @@ const styles = StyleSheet.create({
     marginHorizontal: 12,
   },
   buttonText: {
+    color: 'black',
+  },
+  info: {
+    width: 400,
+    alignItems: 'center',
+  },
+  infoText: {
+    textAlign: 'center',
     color: 'black',
   },
 });

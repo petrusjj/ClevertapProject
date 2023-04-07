@@ -9,6 +9,7 @@ export type IUser = {
 };
 
 export type IUseClevertap = {
+  fetchClevertapID: () => void;
   loginUser: (user: IUser) => void;
   loggedInUser: null | IUser;
   initializedProfile: null | IInitializedProfile;

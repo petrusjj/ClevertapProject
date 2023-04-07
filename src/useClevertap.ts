@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import {Platform} from 'react-native';
 import {
   createNotificationChannel,
   enableDeviceNetworkInfoReporting,
@@ -11,7 +12,6 @@ import {
   setDebugLevel,
 } from './clevertap';
 import {IInitializedProfile, IUseClevertap, IUser} from './types';
-import {Platform} from 'react-native';
 import {sleep} from './utils';
 
 const CleverTap = require('clevertap-react-native');
@@ -47,11 +47,16 @@ const useClevertap = (): IUseClevertap => {
       console.log('CleverTapProfileSync', event);
     });
 
-    CleverTap.addListener(CleverTapPushNotificationClicked, (event: any) => {
-      console.log('CleverTapPushNotificationClicked', event);
-      const payload = Platform.OS === 'ios' ? event.customExtras : event;
-      setNotificationPayload(payload);
-    });
+    CleverTap.addListener(
+      CleverTapPushNotificationClicked,
+      async (event: any) => {
+        console.log('CleverTapPushNotificationClicked', event);
+        const payload = Platform.OS === 'ios' ? event.customExtras : event;
+        setNotificationPayload(payload);
+        await sleep(3000);
+        setNotificationPayload(null);
+      },
+    );
 
     return () => {
       console.log('unsubscribing from events...');
@@ -71,11 +76,22 @@ const useClevertap = (): IUseClevertap => {
     }
     setLoggedInUser(user);
     onUserLogin(user);
-    profileSet({...user, 'MSG-push': true});
     registerForPush();
+    profileSet({...user, 'MSG-push': true});
   };
 
-  return {loginUser, loggedInUser, initializedProfile, notificationPayload};
+  const fetchClevertapID = async () => {
+    const id = await getCleverTapID();
+    setLoggedInUser({...loggedInUser, id});
+  };
+
+  return {
+    fetchClevertapID,
+    loginUser,
+    loggedInUser,
+    initializedProfile,
+    notificationPayload,
+  };
 };
 
 export default useClevertap;
