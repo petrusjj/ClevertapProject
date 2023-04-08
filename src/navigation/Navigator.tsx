@@ -7,59 +7,50 @@ import Loader from '../components/Loader';
 import Home from '../screens/Home';
 import NotFound from '../screens/NotFound';
 import Profile from '../screens/Profile';
-import {linking} from '../utils/linking';
-import {INavigator} from '../utils/types';
-
-console.log('linking initial', linking);
+import {linking as linkingConfiguration} from '../utils/linking';
+import {sleep} from '../utils/utils';
 
 const Stack = createStackNavigator();
 
-const Navigator = (props: INavigator) => {
-  console.log('render Navigator.tsx', props);
-
-  const appState = useRef(AppState.currentState);
-
+const Navigator = () => {
+  const [linking, setLinking] = useState<any>(null);
   const [authenticated, setAuthenticated] = useState<boolean>(true);
-  const [loading, setLoading] = useState<boolean>(true);
 
-  const handleDeepLink = async () => {
-    const link = await Linking.getInitialURL();
-    console.log('link', link);
+  const handleDeepLink = async (event: any) => {
+    console.log('handleDeepLink', event);
+    const url = event?.url;
 
-    // setAuthenticated(true);
+    let loggedIn = false;
 
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    if (url) {
+      setLinking(null); // reset
+
+      // check if allowed
+      await sleep(2000);
+      loggedIn = true;
+
+      setAuthenticated(loggedIn);
+    }
+
+    const obj = linkingConfiguration(loggedIn);
+    setLinking(obj);
   };
 
   useEffect(() => {
-    handleDeepLink();
-
-    const subscription = AppState.addEventListener(
-      'change',
-      (nextAppState: any) => {
-        if (
-          appState.current.match(/inactive|background/) &&
-          nextAppState === 'active'
-        ) {
-          console.log('App has come to the foreground!');
-          handleDeepLink();
-        }
-
-        appState.current = nextAppState;
-        console.log('AppState', appState.current);
-      },
-    );
-
+    const linkingEvent = Linking.addEventListener('url', handleDeepLink);
+    Linking.getInitialURL().then((url: any) => {
+      handleDeepLink({url});
+    });
     return () => {
-      subscription.remove();
+      linkingEvent.remove();
     };
   }, []);
 
-  if (loading) {
+  if (linking === null) {
     return <Loader />;
   }
+
+  console.log('render Navigator.tsx', linking);
 
   return (
     <NavigationContainer linking={linking} fallback={<Loader />}>
