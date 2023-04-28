@@ -6,6 +6,9 @@
 
 #import <React/RCTAppSetupUtils.h>
 
+#import "CleverTap.h"
+#import "CleverTapReactManager.h"
+
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>
 #import <React/RCTCxxBridgeDelegate.h>
@@ -31,7 +34,12 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
   RCTAppSetupPrepareApp(application);
+
+  [self registerPush];
+  [CleverTap autoIntegrate];
+  [[CleverTapReactManager sharedInstance] applicationDidLaunchWithOptions:launchOptions];
 
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
 
@@ -57,7 +65,50 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+
   return YES;
+}
+
+- (void)registerPush {
+   
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error){
+        if( !error ){
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            });
+        }
+    }];
+}
+
+-(void) application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+  NSLog(@"%@: failed to register for remote notifications: %@", self.description, error.localizedDescription);
+}
+
+-(void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+  NSLog(@"%@: registered for remote notifications: %@", self.description, deviceToken.description);
+}
+
+-(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
+    
+  NSLog(@"%@: did receive notification response: %@", self.description, response.notification.request.content.userInfo);
+  completionHandler();
+}
+
+-(void) userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
+    NSLog(@"%@: will present notification: %@", self.description, notification.request.content.userInfo);
+    [[CleverTap sharedInstance] recordNotificationViewedEventWithData:notification.request.content.userInfo];
+    completionHandler(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound);
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    NSLog(@"%@: did receive remote notification completionhandler: %@", self.description, userInfo);
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)pushNotificationTappedWithCustomExtras:(NSDictionary *)customExtras{
+   NSLog(@"pushNotificationTapped: customExtras: ", customExtras);
 }
 
 /// This method controls whether the `concurrentRoot`feature of React18 is turned on or off.
