@@ -14,7 +14,7 @@ const Home = (props: IHome) => {
   const {route} = props;
   console.log('render Home.tsx', route);
 
-  const {fetchClevertapID, loginUser} = useClevertap();
+  const {fetchClevertapID, loginUser, sendEvent} = useClevertap();
 
   return (
     <View style={styles.container}>
@@ -38,6 +38,11 @@ const Home = (props: IHome) => {
           <Text style={styles.buttonText}>Login user Lucas</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.buttons}>
+        <TouchableOpacity style={styles.button} onPress={sendEvent}>
+          <Text style={styles.buttonText}>SEND EVENT</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -58,6 +63,7 @@ const styles = StyleSheet.create({
   buttons: {
     flexDirection: 'row',
     justifyContent: 'center',
+    paddingBottom: 50,
   },
   button: {
     backgroundColor: 'red',

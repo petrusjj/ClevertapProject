@@ -11,6 +11,7 @@ export type IUser = {
 export type IUseClevertap = {
   fetchClevertapID: () => void;
   loginUser: (user: IUser) => void;
+  sendEvent: () => void;
 };
 
 export type IUseClevertapListeners = {};
@@ -22,7 +23,7 @@ export type IHome = {
   route: any;
 };
 
-export type IProfile = {
+export type ISettings = {
   navigation: any;
   route: any;
 };

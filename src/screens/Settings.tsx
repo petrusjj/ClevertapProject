@@ -1,19 +1,19 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {IProfile} from '../utils/types';
+import {ISettings} from '../utils/types';
 
-const Profile = (props: IProfile) => {
+const Settings = (props: ISettings) => {
   const {route} = props;
-  console.log('render Profile.tsx', route);
+  console.log('render Settings.tsx', route);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Profile</Text>
+      <Text style={styles.text}>Settings</Text>
     </View>
   );
 };
 
-export default Profile;
+export default Settings;
 
 const styles = StyleSheet.create({
   container: {

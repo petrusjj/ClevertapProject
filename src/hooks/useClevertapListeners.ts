@@ -19,7 +19,7 @@ const useClevertapListeners = (): IUseClevertapListeners => {
   useEffect(() => {
     enableDeviceNetworkInfoReporting();
     setDebugLevel(3);
-    promptForPushPermission(true);
+    // promptForPushPermission(true);
     createNotificationChannel();
 
     console.log('listening to Clevertap events...');
