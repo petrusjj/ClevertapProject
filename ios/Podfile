@@ -26,10 +26,12 @@ target 'FreshProject' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  pod 'CleverTap-iOS-SDK'
-
   target 'nse-dev' do
     pod 'CTNotificationService'
+  end
+
+  target 'nce-dev' do
+    pod 'CTNotificationContent'
   end
 
   post_install do |installer|
