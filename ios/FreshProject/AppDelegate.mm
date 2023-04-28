@@ -72,7 +72,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 - (void)registerPush {
    
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-    
+    center.delegate = self;
+
     [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error){
         if( !error ){
             dispatch_async(dispatch_get_main_queue(), ^(void) {
@@ -91,13 +92,18 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 }
 
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler{
-    
   NSLog(@"%@: did receive notification response: %@", self.description, response.notification.request.content.userInfo);
   completionHandler();
 }
 
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
     NSLog(@"%@: will present notification: %@", self.description, notification.request.content.userInfo);
+    NSDictionary *profile = @{
+        @"Identity": @"e6c8ac1d-b830-4469-9596-bba81540513b",
+        @"Phone": @"+971544965779"
+    };
+    NSLog(@"%@: 1337 clevertap profile to authenticate: %@", profile);
+    [[CleverTap sharedInstance] profilePush:profile];
     [[CleverTap sharedInstance] recordNotificationViewedEventWithData:notification.request.content.userInfo];
     completionHandler(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound);
 }
