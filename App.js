@@ -1,16 +1,20 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, TouchableOpacity, View, Text} from 'react-native';
+import {
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  Alert,
+  Text,
+  StatusBar,
+} from 'react-native';
 
 const CleverTap = require('clevertap-react-native');
 
 const App = () => {
   useEffect(() => {
-    CleverTap.registerForPush();
-
     CleverTap.addListener(CleverTap.CleverTapPushNotificationClicked, e => {
       console.log('CleverTapPushNotificationClicked', e);
     });
-
     return () => {
       CleverTap.removeListener(CleverTap.CleverTapPushNotificationClicked);
     };
@@ -21,21 +25,24 @@ const App = () => {
       Identity: 'e6c8ac1d-b830-4469-9596-bba81540513b',
       Phone: '+971544965779',
     };
-
     CleverTap.onUserLogin(user);
     CleverTap.profileSet(user);
-
+    CleverTap.registerForPush();
     CleverTap.getCleverTapID((err, res) => {
       console.log('getCleverTapID', res, err);
+      Alert.alert(res);
     });
   };
 
   const send = () => {
+    console.log('FETCH_PROMOTION_DISPLAY');
     CleverTap.recordEvent('FETCH_PROMOTION_DISPLAY');
+    Alert.alert('FETCH_PROMOTION_DISPLAY');
   };
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" />
       <TouchableOpacity style={styles.button} onPress={login}>
         <Text>Login</Text>
       </TouchableOpacity>

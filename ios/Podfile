@@ -26,9 +26,10 @@ target 'FreshProject' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
-  target 'FreshProjectTests' do
-    inherit! :complete
-    # Pods for testing
+  pod 'CleverTap-iOS-SDK'
+
+  target 'nse-dev' do
+    pod 'CTNotificationService'
   end
 
   post_install do |installer|
@@ -38,6 +39,13 @@ target 'FreshProject' do
       # necessary for Mac Catalyst builds
       :mac_catalyst_enabled => false
     )
+
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings['APPLICATION_EXTENSION_API_ONLY'] = 'No'
+      end
+    end
+
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
 end

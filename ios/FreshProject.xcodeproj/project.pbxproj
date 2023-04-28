@@ -7,29 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C80B921A6F3F58F76C31292 /* libPods-FreshProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-FreshProject.a */; };
+		10D6D26DB410E1CC3BE66901 /* libPods-FreshProject-nse-dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E53D90F101EE26ECE3C237D3 /* libPods-FreshProject-nse-dev.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		42DE003D29FBDCE700075350 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 42DE003C29FBDCE700075350 /* NotificationService.m */; };
+		42DE004129FBDCE700075350 /* nse-dev.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 42DE003929FBDCE700075350 /* nse-dev.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A25921F9D6C050107224CFAD /* libPods-FreshProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06DC9A775461D846471DA4A2 /* libPods-FreshProject.a */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		42DE003F29FBDCE700075350 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42DE003829FBDCE700075350;
+			remoteInfo = "nse-dev";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		42DE004529FBDCE700075350 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				42DE004129FBDCE700075350 /* nse-dev.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		06DC9A775461D846471DA4A2 /* libPods-FreshProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreshProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* FreshProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FreshProject/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = FreshProject/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FreshProject/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FreshProject/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FreshProject/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-FreshProject-FreshProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreshProject-FreshProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-FreshProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshProject.debug.xcconfig"; path = "Target Support Files/Pods-FreshProject/Pods-FreshProject.debug.xcconfig"; sourceTree = "<group>"; };
 		42DE003429FBC51500075350 /* FreshProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = FreshProject.entitlements; path = FreshProject/FreshProject.entitlements; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-FreshProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshProject.release.xcconfig"; path = "Target Support Files/Pods-FreshProject/Pods-FreshProject.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-FreshProject-FreshProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshProject-FreshProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-FreshProject-FreshProjectTests/Pods-FreshProject-FreshProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-FreshProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreshProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DE003929FBDCE700075350 /* nse-dev.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "nse-dev.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42DE003B29FBDCE700075350 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
+		42DE003C29FBDCE700075350 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
+		42DE003E29FBDCE700075350 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FreshProject/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-FreshProject-FreshProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshProject-FreshProjectTests.release.xcconfig"; path = "Target Support Files/Pods-FreshProject-FreshProjectTests/Pods-FreshProject-FreshProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		B1003D1E447247DA45072097 /* Pods-FreshProject-nse-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshProject-nse-dev.debug.xcconfig"; path = "Target Support Files/Pods-FreshProject-nse-dev/Pods-FreshProject-nse-dev.debug.xcconfig"; sourceTree = "<group>"; };
+		D09123BD0E4F9E9927481247 /* Pods-FreshProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshProject.release.xcconfig"; path = "Target Support Files/Pods-FreshProject/Pods-FreshProject.release.xcconfig"; sourceTree = "<group>"; };
+		E53D90F101EE26ECE3C237D3 /* libPods-FreshProject-nse-dev.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FreshProject-nse-dev.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7D40C36A2D7E8C950FBB885 /* Pods-FreshProject-nse-dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshProject-nse-dev.release.xcconfig"; path = "Target Support Files/Pods-FreshProject-nse-dev/Pods-FreshProject-nse-dev.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		EEB0FAE68BFA3E0026662EE1 /* Pods-FreshProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreshProject.debug.xcconfig"; path = "Target Support Files/Pods-FreshProject/Pods-FreshProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +68,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-FreshProject.a in Frameworks */,
+				A25921F9D6C050107224CFAD /* libPods-FreshProject.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42DE003629FBDCE700075350 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D6D26DB410E1CC3BE66901 /* libPods-FreshProject-nse-dev.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +101,20 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-FreshProject.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-FreshProject-FreshProjectTests.a */,
+				06DC9A775461D846471DA4A2 /* libPods-FreshProject.a */,
+				E53D90F101EE26ECE3C237D3 /* libPods-FreshProject-nse-dev.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42DE003A29FBDCE700075350 /* nse-dev */ = {
+			isa = PBXGroup;
+			children = (
+				42DE003B29FBDCE700075350 /* NotificationService.h */,
+				42DE003C29FBDCE700075350 /* NotificationService.m */,
+				42DE003E29FBDCE700075350 /* Info.plist */,
+			);
+			path = "nse-dev";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -80,6 +129,7 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* FreshProject */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				42DE003A29FBDCE700075350 /* nse-dev */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
@@ -93,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* FreshProject.app */,
+				42DE003929FBDCE700075350 /* nse-dev.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,10 +151,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-FreshProject.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-FreshProject.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-FreshProject-FreshProjectTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-FreshProject-FreshProjectTests.release.xcconfig */,
+				EEB0FAE68BFA3E0026662EE1 /* Pods-FreshProject.debug.xcconfig */,
+				D09123BD0E4F9E9927481247 /* Pods-FreshProject.release.xcconfig */,
+				B1003D1E447247DA45072097 /* Pods-FreshProject-nse-dev.debug.xcconfig */,
+				E7D40C36A2D7E8C950FBB885 /* Pods-FreshProject-nse-dev.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -115,23 +166,44 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FreshProject" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				88D9D9C220B8E1A430D8E1E5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				42DE004529FBDCE700075350 /* Embed Foundation Extensions */,
+				66866633269DD0976B495533 /* [CP] Embed Pods Frameworks */,
+				E239A594D0B1104D0DC8C041 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				42DE004029FBDCE700075350 /* PBXTargetDependency */,
 			);
 			name = FreshProject;
 			productName = FreshProject;
 			productReference = 13B07F961A680F5B00A75B9A /* FreshProject.app */;
 			productType = "com.apple.product-type.application";
+		};
+		42DE003829FBDCE700075350 /* nse-dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42DE004229FBDCE700075350 /* Build configuration list for PBXNativeTarget "nse-dev" */;
+			buildPhases = (
+				7F6197783309012520D7B9FC /* [CP] Check Pods Manifest.lock */,
+				42DE003529FBDCE700075350 /* Sources */,
+				42DE003629FBDCE700075350 /* Frameworks */,
+				42DE003729FBDCE700075350 /* Resources */,
+				68C5406E2857BE4AED991328 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "nse-dev";
+			productName = "nse-dev";
+			productReference = 42DE003929FBDCE700075350 /* nse-dev.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -143,6 +215,9 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
+					};
+					42DE003829FBDCE700075350 = {
+						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
@@ -160,6 +235,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* FreshProject */,
+				42DE003829FBDCE700075350 /* nse-dev */,
 			);
 		};
 /* End PBXProject section */
@@ -171,6 +247,13 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42DE003729FBDCE700075350 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +276,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
+		66866633269DD0976B495533 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,7 +293,46 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FreshProject/Pods-FreshProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		68C5406E2857BE4AED991328 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FreshProject-nse-dev/Pods-FreshProject-nse-dev-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FreshProject-nse-dev/Pods-FreshProject-nse-dev-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FreshProject-nse-dev/Pods-FreshProject-nse-dev-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F6197783309012520D7B9FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FreshProject-nse-dev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		88D9D9C220B8E1A430D8E1E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -232,7 +354,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		E239A594D0B1104D0DC8C041 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -280,12 +402,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		42DE003529FBDCE700075350 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42DE003D29FBDCE700075350 /* NotificationService.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42DE004029FBDCE700075350 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42DE003829FBDCE700075350 /* nse-dev */;
+			targetProxy = 42DE003F29FBDCE700075350 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-FreshProject.debug.xcconfig */;
+			baseConfigurationReference = EEB0FAE68BFA3E0026662EE1 /* Pods-FreshProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -315,7 +453,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-FreshProject.release.xcconfig */;
+			baseConfigurationReference = D09123BD0E4F9E9927481247 /* Pods-FreshProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -338,6 +476,78 @@
 				PRODUCT_NAME = FreshProject;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		42DE004329FBDCE700075350 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1003D1E447247DA45072097 /* Pods-FreshProject-nse-dev.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = A95YJGYS73;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "nse-dev/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "nse-dev";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pyypl.dev.nse-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42DE004429FBDCE700075350 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7D40C36A2D7E8C950FBB885 /* Pods-FreshProject-nse-dev.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = A95YJGYS73;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "nse-dev/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "nse-dev";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pyypl.dev.nse-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -486,6 +696,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42DE004229FBDCE700075350 /* Build configuration list for PBXNativeTarget "nse-dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42DE004329FBDCE700075350 /* Debug */,
+				42DE004429FBDCE700075350 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

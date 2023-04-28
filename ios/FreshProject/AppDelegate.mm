@@ -98,12 +98,6 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
     NSLog(@"%@: will present notification: %@", self.description, notification.request.content.userInfo);
-    NSDictionary *profile = @{
-        @"Identity": @"e6c8ac1d-b830-4469-9596-bba81540513b",
-        @"Phone": @"+971544965779"
-    };
-    NSLog(@"%@: 1337 clevertap profile to authenticate: %@", profile);
-    [[CleverTap sharedInstance] profilePush:profile];
     [[CleverTap sharedInstance] recordNotificationViewedEventWithData:notification.request.content.userInfo];
     completionHandler(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound);
 }
