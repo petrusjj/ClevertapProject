@@ -5,8 +5,8 @@
 //  Created by Petrus van Egeraat on 4/28/23.
 //
 
-#import <UserNotifications/UserNotifications.h>
+#import <CTNotificationService/CTNotificationService.h>
 
-@interface NotificationService : UNNotificationServiceExtension
+@interface NotificationService : CTNotificationServiceExtension
 
 @end

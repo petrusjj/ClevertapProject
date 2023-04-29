@@ -98,7 +98,6 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 -(void) userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler{
     NSLog(@"%@: will present notification: %@", self.description, notification.request.content.userInfo);
-    [[CleverTap sharedInstance] recordNotificationViewedEventWithData:notification.request.content.userInfo];
     completionHandler(UNAuthorizationOptionAlert | UNAuthorizationOptionBadge | UNAuthorizationOptionSound);
 }
 

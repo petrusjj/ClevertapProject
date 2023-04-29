@@ -14,6 +14,7 @@ const App = () => {
   useEffect(() => {
     CleverTap.addListener(CleverTap.CleverTapPushNotificationClicked, e => {
       console.log('CleverTapPushNotificationClicked', e);
+      Alert.alert(JSON.stringify(e));
     });
     return () => {
       CleverTap.removeListener(CleverTap.CleverTapPushNotificationClicked);

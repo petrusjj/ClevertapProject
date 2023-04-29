@@ -2,11 +2,11 @@
 //  NotificationViewController.h
 //  nce-dev
 //
-//  Created by Petrus van Egeraat on 4/28/23.
+//  Created by Petrus van Egeraat on 4/29/23.
 //
 
-#import <UIKit/UIKit.h>
+#import <CTNotificationContent/CTNotificationContent.h>
 
-@interface NotificationViewController : UIViewController
+@interface NotificationViewController : CTNotificationViewController
 
 @end

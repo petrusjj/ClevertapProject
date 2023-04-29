@@ -385,7 +385,6 @@ PODS:
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
-  - CleverTap-iOS-SDK
   - clevertap-react-native (from `../node_modules/clevertap-react-native`)
   - CTNotificationContent
   - CTNotificationService
@@ -598,6 +597,6 @@ SPEC CHECKSUMS:
   Yoga: 92d086bb705a41cc588599b51db726ba7b1d341c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 0298524815ec7a4c563e9bf1e630da810f7ab4f3
+PODFILE CHECKSUM: 4459e2a2fff02f116924ea291340fa59c723fcec
 
 COCOAPODS: 1.12.0
