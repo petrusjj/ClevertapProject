@@ -375,6 +375,10 @@ PODS:
     - React-jsi (= 0.70.7)
     - React-logger (= 0.70.7)
     - React-perflogger (= 0.70.7)
+  - RNDefaultPreference (1.4.4):
+    - React-Core
+  - RNReactNativeSharedGroupPreferences (1.1.23):
+    - React
   - SDWebImage (5.15.6):
     - SDWebImage/Core (= 5.15.6)
   - SDWebImage/Core (5.15.6)
@@ -445,6 +449,8 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNDefaultPreference (from `../node_modules/react-native-default-preference`)
+  - RNReactNativeSharedGroupPreferences (from `../node_modules/react-native-shared-group-preferences`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -538,6 +544,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNDefaultPreference:
+    :path: "../node_modules/react-native-default-preference"
+  RNReactNativeSharedGroupPreferences:
+    :path: "../node_modules/react-native-shared-group-preferences"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -592,11 +602,13 @@ SPEC CHECKSUMS:
   React-RCTVibration: eb7837d55b87c7a4ead3ab7632ad70dca87c65dc
   React-runtimeexecutor: 7cec9ed92ebde8309902530bb566819645c84ee5
   ReactCommon: 0253d197eaa7f6689dcd3e7d5360449ab93e10df
+  RNDefaultPreference: 08bdb06cfa9188d5da97d4642dac745218d7fb31
+  RNReactNativeSharedGroupPreferences: de0121a4224c267bc7e9fb16c398f3f087c8da81
   SDWebImage: d47d81bea8a77187896b620dc79c3c528e8906b9
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 92d086bb705a41cc588599b51db726ba7b1d341c
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 4459e2a2fff02f116924ea291340fa59c723fcec
+PODFILE CHECKSUM: ec8943d515b3978e25afaea0a93d428ea6d814e1
 
 COCOAPODS: 1.12.0

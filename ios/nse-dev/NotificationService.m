@@ -7,6 +7,7 @@
 
 #import "NotificationService.h"
 #import "CleverTap.h"
+#import <Foundation/Foundation.h>
 
 @interface NotificationService ()
 
@@ -20,14 +21,26 @@
 - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
-  
-    NSString *myString = @"Hello, World!";
-    NSLog(@"myString: %@", myString);
-  
-    NSDictionary *profile = @{
-        @"Identity": @"e6c8ac1d-b830-4469-9596-bba81540513b",
-        @"Phone": @"+971544965779"
-    };
+
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.pyypl.dev"];
+    NSString *jsonString = [defaults objectForKey:@"currentUser"];
+
+    NSLog(@"jsonData: %@", jsonString);
+
+    // Convert the JSON string to a dictionary
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error;
+    NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+
+    // Extract values from the dictionary
+    NSString *userId = [jsonDict valueForKey:@"userId"];
+    NSString *phoneNumber = [jsonDict valueForKey:@"phoneNumber"];
+
+    // Construct a new NSDictionary object with the extracted values
+    NSDictionary *profile = @{@"Identity": userId, @"Phone": phoneNumber};
+
+    NSLog(@"profile: %@", profile);
+
     [[CleverTap sharedInstance] profilePush:profile];
     [[CleverTap sharedInstance] recordNotificationViewedEventWithData:request.content.userInfo];
     [super didReceiveNotificationRequest:request withContentHandler:contentHandler];

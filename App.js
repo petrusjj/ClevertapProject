@@ -8,7 +8,12 @@ import {
   StatusBar,
 } from 'react-native';
 
+// import DefaultPreference from 'react-native-default-preference';
+import SharedGroupPreferences from 'react-native-shared-group-preferences';
+
 const CleverTap = require('clevertap-react-native');
+
+const appGroupIdentifier = 'group.com.pyypl.dev';
 
 const App = () => {
   useEffect(() => {
@@ -21,10 +26,20 @@ const App = () => {
     };
   }, []);
 
-  const login = () => {
+  const login = async () => {
+    const userId = 'e6c8ac1d-b830-4469-9596-bba81540513b';
+    const phoneNumber = '+971544965779';
+    await SharedGroupPreferences.setItem(
+      'currentUser',
+      {
+        userId,
+        phoneNumber,
+      },
+      appGroupIdentifier,
+    );
     const user = {
-      Identity: 'e6c8ac1d-b830-4469-9596-bba81540513b',
-      Phone: '+971544965779',
+      Identity: userId,
+      Phone: phoneNumber,
     };
     CleverTap.onUserLogin(user);
     CleverTap.profileSet(user);
@@ -33,6 +48,13 @@ const App = () => {
       console.log('getCleverTapID', res, err);
       Alert.alert(res);
     });
+    // DefaultPreference.set(
+    //   'currentUser',
+    //   JSON.stringify({
+    //     userId: 'e6c8ac1d-b830-4469-9596-bba81540513b',
+    //     phoneNumber: '+971544965779',
+    //   }),
+    // );
   };
 
   const send = () => {
